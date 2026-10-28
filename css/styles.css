@@ -1,13 +1,15 @@
 /*  Variables y configuracion de la pagina*/
 :root {
-  --azul-marino: #18345E;
+  --azul-marino: #1A365D;
   --azul-oscuro: #102544;
   --azul-3: #5C7293;
-  --naranja: #FF6600;
-  --naranja-oscuro: #e55a00;
-  --rojo: #E61919;
-  --verde: #18A526;
-  --texto-1: #1A2536;
+  --naranja: #FF6B00;
+  --naranja-oscuro: #E55A00;
+  --rojo: #D32F2F;
+  --verde: #2E7D32;
+  --amarillo: #F57F17;
+  --fondo-claro: #F8F9FA;
+  --texto-1: #212121;
   --texto-2: #5A6B82;
 }
 
@@ -20,7 +22,7 @@
 body {
   font-family: 'Inter', sans-serif;
   color: var(--texto-1);
-  background-color: #FFFFFF;
+  background-color: var(--fondo-claro);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -63,8 +65,7 @@ body {
   font-size: 1rem;
 }
 
-/* PANTALLA 1 */
-
+/* PANTALLA 1 Login*/ 
 .barra-navegacion-acceso {
   height: 68px;
   display: flex;
@@ -75,9 +76,9 @@ body {
 }
 
 .enlaces-navegacion-acceso {
-  margin-left: 800px;
+  margin-left: auto;
   display: flex;
-  gap: 50px;
+  gap: 32px;
 }
 
 .enlaces-navegacion-acceso a {
@@ -85,12 +86,17 @@ body {
   color: var(--azul-marino);
   font-weight: 600;
   font-size: 0.98rem;
+  transition: color 0.2s ease;
+}
+
+.enlaces-navegacion-acceso a:hover {
+  color: var(--naranja);
 }
 
 .division-acceso {
   display: grid;
   grid-template-columns: 48% 52%;
-  min-height: calc(100vh - 61px);
+  min-height: calc(100vh - 68px);
 }
 
 /* Panel izquierdo azul (donde esta la figura) */
@@ -317,20 +323,21 @@ body {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  color: #444;
+  color: #5A6B82;
 }
 
 .contenedor-campo input {
   width: 100%;
   padding: 11px 14px 11px 42px;
-  border: 1px solid #999;
+  border: 1px solid #C4CDD5;
   border-radius: 7px;
   font-size: 0.92rem;
   outline: none;
+  transition: border-color 0.2s ease;
 }
 
 .contenedor-campo input:focus {
-  border-color: var(--azul-marino);
+  border-color: var(--naranja);
 }
 
 .fila-casilla {
@@ -342,4 +349,21 @@ body {
   color: var(--azul-marino);
   margin-bottom: 24px;
   cursor: pointer;
+}
+
+/* Adaptación responsive */
+@media (max-width: 900px) {
+  .division-acceso {
+    grid-template-columns: 1fr;
+  }
+  .barra-navegacion-acceso {
+    padding: 0 20px;
+  }
+  .enlaces-navegacion-acceso {
+    gap: 16px;
+  }
+  .acceso-izquierda,
+  .acceso-derecha {
+    padding: 32px 20px;
+  }
 }
