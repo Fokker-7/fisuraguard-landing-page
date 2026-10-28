@@ -1,0 +1,345 @@
+/*  Variables y configuracion de la pagina*/
+:root {
+  --azul-marino: #18345E;
+  --azul-oscuro: #102544;
+  --azul-3: #5C7293;
+  --naranja: #FF6600;
+  --naranja-oscuro: #e55a00;
+  --rojo: #E61919;
+  --verde: #18A526;
+  --texto-1: #1A2536;
+  --texto-2: #5A6B82;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--texto-1);
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/*  clases reutilizables  */
+.logo-marca {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--azul-marino);
+  letter-spacing: -0.3px;
+}
+
+.logo-marca span {
+  color: var(--naranja);
+}
+
+.boton-primario {
+  background-color: var(--naranja);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.boton-primario:hover {
+  background-color: var(--naranja-oscuro);
+}
+
+.boton-primario:active {
+  transform: scale(0.99);
+}
+
+.boton-bloque {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/* PANTALLA 1 */
+
+.barra-navegacion-acceso {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
+  border-bottom: 1px solid #D5DCE6;
+  background: #FFFFFF;
+}
+
+.enlaces-navegacion-acceso {
+  margin-left: 800px;
+  display: flex;
+  gap: 50px;
+}
+
+.enlaces-navegacion-acceso a {
+  text-decoration: none;
+  color: var(--azul-marino);
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.division-acceso {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  min-height: calc(100vh - 61px);
+}
+
+/* Panel izquierdo azul (donde esta la figura) */
+.acceso-izquierda {
+  background-color: var(--azul-marino);
+  color: #FFFFFF;
+  padding: 48px 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenido-acceso-izquierda {
+  max-width: 440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.titulo-ia {
+  color: var(--naranja);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitulo-ia {
+  color: #B4C3DC;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  margin-bottom: 28px;
+}
+
+.encabezado-inspeccion-activa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.etiqueta-pequena {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
+  color: #8FA5C6;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.encabezado-inspeccion-activa h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.pastilla-estado {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #D2DFEE;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.punto-naranja, .punto-verde, .punto-rojo {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.punto-naranja { background-color: var(--naranja); }
+.punto-verde   { background-color: var(--verde); }
+.punto-rojo    { background-color: var(--rojo); }
+
+.caja-grafico-ia {
+  position: relative;
+  border: 1px solid #2A4978;
+  background-color: rgba(16, 37, 68, 0.45);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  padding: 10px;
+}
+
+.edificio {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.insignia-ia {
+  position: absolute;
+  right: 16px;
+  top: 52%;
+  background-color: var(--naranja);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.tarjeta-riesgo {
+  background-color: var(--azul-oscuro);
+  padding: 16px 20px;
+  border-radius: 6px;
+}
+
+.cabecera-tarjeta-riesgo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.cabecera-tarjeta-riesgo h3 {
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+.puntaje-riesgo {
+  color: var(--naranja);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.pista-barra-riesgo {
+  position: relative;
+  height: 6px;
+  display: flex;
+  border-radius: 4px;
+  overflow: visible;
+  margin-bottom: 12px;
+}
+
+.segmento-verde   { flex: 1; background: var(--verde); border-radius: 4px 0 0 4px; }
+.segmento-naranja { flex: 1; background: var(--naranja); }
+.segmento-rojo    { flex: 1; background: var(--rojo); border-radius: 0 4px 4px 0; }
+
+.indicador-riesgo {
+  position: absolute;
+  top: -4px;
+  width: 4px;
+  height: 14px;
+  background: #FFFFFF;
+  border-radius: 2px;
+}
+
+.leyenda-riesgo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #9AB0CF;
+}
+
+/* Panel erecho blanco (el formulario) */
+.acceso-derecha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background-color: #FFFFFF;
+}
+
+.contenedor-formulario-acceso {
+  width: 100%;
+  max-width: 410px;
+}
+
+.etiqueta-portal {
+  color: var(--naranja);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contenedor-formulario-acceso h1 {
+  color: var(--azul-marino);
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.descripcion-acceso {
+  color: var(--texto-2);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin-bottom: 26px;
+}
+
+.grupo-formulario {
+  margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+  display: block;
+  color: var(--azul-marino);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.fila-etiqueta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.enlace-olvido {
+  color: var(--azul-marino);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contenedor-campo {
+  position: relative;
+}
+
+.icono-campo {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #444;
+}
+
+.contenedor-campo input {
+  width: 100%;
+  padding: 11px 14px 11px 42px;
+  border: 1px solid #999;
+  border-radius: 7px;
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.contenedor-campo input:focus {
+  border-color: var(--azul-marino);
+}
+
+.fila-casilla {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--azul-marino);
+  margin-bottom: 24px;
+  cursor: pointer;
+}
