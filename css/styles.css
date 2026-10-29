@@ -351,6 +351,83 @@ body {
   cursor: pointer;
 }
 
+/*condicion*/
+.solo-movil {
+  display: none !important;
+}
+
+/* PANTALLA 1 (CELULAR) */
+@media (max-width: 768px) {
+  /* alternar los dispositivos */
+  .solo-pc {
+    display: none !important;
+  }
+  .solo-movil {
+    display: block !important;
+  }
+
+  /* cambiar las posiciones de las diviciones  */
+  .division-acceso {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* cuadro azul curvo en celular */
+  .acceso-izquierda {
+    padding: 24px 20px 32px;
+    border-radius: 0 0 28px 28px;
+    background-color: var(--azul-marino);
+  }
+
+  .contenido-acceso-izquierda {
+    max-width: 100%;
+    position: relative;
+  }
+
+  .logo-marca-blanco {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+  .logo-marca-blanco span {
+    color: var(--naranja);
+  }
+
+  .eslogan-movil {
+    color: #FFFFFF;
+    font-size: 1.65rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .caja-grafico-ia {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  /* formulario  */
+  .acceso-derecha {
+    padding: 30px 24px;
+    align-items: flex-start;
+  }
+
+  .contenedor-formulario-acceso h1 {
+    font-size: 1.8rem;
+  }
+
+  .contenedor-campo input {
+    border-radius: 20px; /* bordes más redondeados */
+  }
+
+  .boton-bloque {
+    border-radius: 16px;
+  }
+}
+
 /* Adaptación responsive */
 @media (max-width: 900px) {
   .division-acceso {
@@ -367,3 +444,4 @@ body {
     padding: 32px 20px;
   }
 }
+
