@@ -25,16 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        /*esta parte es la primera fase del inicio de sesion, no se cambia a una segunda pantalla sin embargo
-        muestra que el inicio de sesion ha sido exitoso*/
-        Botoniniciosesion.textContent = 'Iniciando sesión...';
-        Botoniniciosesion.disabled = true;
-
-        setTimeout(() => {
-            alert(`Acceso correcto\nUsuario: ${correo}\n`);
-            Botoniniciosesion.textContent = 'Iniciar sesion';
-            Botoniniciosesion.disabled = false;
-        }, 800); //cambiar el numero en caso sea muy lento
+        //pasa de frente al index 2 
+        localStorage.setItem('usuarioActivo', correo);  
+        window.location.href = "../pages/index2.html";
 
     });
 });
