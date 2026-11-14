@@ -1,0 +1,65 @@
+/*  VARIABLES GLOBALES Y CONFIGURACIÓN BASE*/
+:root {
+  --azul-marino: #1A365D;
+  --azul-oscuro: #102544;
+  --azul-3: #5C7293;
+  --naranja: #FF6B00;
+  --naranja-oscuro: #E55A00;
+  --rojo: #D32F2F;
+  --verde: #2E7D32;
+  --amarillo: #F57F17;
+  --fondo-claro: #F8F9FA;
+  --texto-1: #212121;
+  --texto-2: #5A6B82;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--texto-1);
+  background-color: var(--fondo-claro);
+  min-height: 100vh;
+}
+
+/*  ELEMENTOS COMPARTIDOS  */
+.logo-marca {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--azul-marino);
+  letter-spacing: -0.3px;
+}
+
+.logo-marca span {
+  color: var(--naranja);
+}
+
+.boton-primario {
+  background-color: var(--naranja);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.boton-primario:hover {
+  background-color: var(--naranja-activo);
+}
+
+.boton-primario:active {
+  transform: scale(0.99);
+}
+
+.boton-bloque {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+}
