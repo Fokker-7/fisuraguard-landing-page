@@ -1,0 +1,263 @@
+/*estilos de la pag 2*/
+.contenido-panel {
+  padding: 36px 44px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cuadricula-panel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 38px;
+  width: 100%;
+  flex: 1;
+}
+
+.tarjeta-panel {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde-gris);
+  border-radius: 12px;
+  padding: 28px 32px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cabecera-tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cabecera-tarjeta h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+}
+
+/* Contenedores e imágenes tarjetas */
+.insignia-icono {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icono-tarjeta {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.insignia-azul  { 
+  background-color: #DCE3F0; 
+}
+
+.insignia-roja  { 
+  background-color: #F6D8D8; 
+}
+.insignia-verde { 
+  background-color: #DCF2E1; 
+}
+
+.insignia-alerta {
+  background-color: transparent;
+}
+
+.insignia-alerta .icono-tarjeta {
+  width: 38px;
+  height: 38px;
+}
+
+/* Cifras y barras de progreso */
+.cifra-grande {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin: 16px 0;
+}
+
+.barra-estadistica {
+  height: 5px;
+  background-color: #CFCFCF;
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.relleno-barra {
+  height: 100%;
+}
+
+.relleno-negro { 
+  background-color: #111; 
+}
+.relleno-rojo  { 
+  background-color: var(--rojo); 
+}
+
+.nota-tarjeta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 6px;
+  margin-bottom: auto;
+}
+
+/* Gráfico de Barras Trimestral */
+.contenedor-grafico {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-top: 18px;
+}
+
+.grupo-grafico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 85px;
+  padding: 0 14px;
+  border-bottom: 1.5px solid #888;
+}
+
+.barra {
+  width: 10px;
+  border-radius: 2px 2px 0 0;
+}
+
+.barra-verde    { 
+  background-color: #1ED700; 
+}
+.barra-amarilla { 
+  background-color: #FFD600; 
+}
+.barra-roja     { 
+  background-color: #FF1E00; 
+}
+
+.etiqueta-mes {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* Lista de Últimas Alertas */
+.lista-alertas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: auto;
+}
+
+.elemento-alerta {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.alerta-clicable {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.alerta-clicable:hover {
+  color: var(--naranja);
+}
+
+.vineta {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.vineta-roja    { 
+  background-color: var(--rojo); 
+}
+.vineta-naranja { 
+  background-color: #FF8A00; 
+}
+.vineta-verde   { 
+  background-color: #19B500; 
+}
+
+@media (min-width: 1400px) {
+  .contenido-panel {
+    padding: 44px 56px;
+  }
+
+  .cuadricula-panel {
+    gap: 40px 48px;
+  }
+
+  .tarjeta-panel {
+    padding: 34px 40px;
+    min-height: 290px;
+  }
+
+  .cabecera-tarjeta h3 {
+    font-size: 1.3rem;
+  }
+
+  .insignia-icono {
+    width: 52px;
+    height: 52px;
+  }
+
+  .icono-tarjeta {
+    width: 28px;
+    height: 28px;
+  }
+
+  .insignia-alerta .icono-tarjeta {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cifra-grande {
+    font-size: 3.8rem;
+  }
+
+  .barras {
+    height: 110px;
+    gap: 6px;
+  }
+
+  .barra {
+    width: 13px;
+  }
+
+  .elemento-alerta {
+    font-size: 1.12rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .contenido-panel {
+    padding: 24px 18px;
+  }
+
+  .cuadricula-panel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

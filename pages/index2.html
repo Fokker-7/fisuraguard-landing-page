@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FisuraGuard - Resumen General</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/stylespag2.css">
+  <link rel="stylesheet" href="../css/stylesGlobal.css">
+  <script src="../js/panel.js" defer></script>
+</head>
+<body>
+  <div class="diseno-aplicacion">
+    <!-- Barra Lateral Izquierda -->
+    <aside class="barra-lateral" id="barra-lateral">
+      <div class="marca-barra-lateral">
+        <div class="logo-marca">Fisura<span>Guard</span></div>
+      </div>
+
+      <div class="menu-barra-lateral">
+        <span class="subtitulo-menu">Menu principal</span>
+        <nav class="lista-navegacion">
+          <a href="panel.html" class="elemento-navegacion activo">
+            <img src="../sources/icono-dashboard.png" alt="Dashboard" class="icono-navegacion">
+            <span>Dashboard</span>
+          </a>
+
+          <a href="#" class="elemento-navegacion">
+            <img src="../sources/icono-proyectos.png" alt="Proyectos" class="icono-navegacion">
+            <span>Proyectos</span>
+          </a>
+
+          <a href="#" class="elemento-navegacion">
+            <img src="../sources/icono-mapa.png" alt="Mapa" class="icono-navegacion">
+            <span>Mapa</span>
+          </a>
+
+          <a href="inspeccion.html" class="elemento-navegacion">
+            <img src="../sources/icono-reportes.png" alt="Reportes" class="icono-navegacion">
+            <span>Reportes</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="usuario-barra-lateral" id="boton-cerrar-sesion" title="Cerrar sesión">
+        <div class="circulo-avatar">
+          <img src="../sources/avatar-supervisor.png" alt="Angelo" class="imagen-avatar">
+        </div>
+        <div class="datos-usuario">
+          <strong>Angelo</strong>
+          <span>Ing supervisor</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- area principal derecha -->
+    <div class="area-principal">
+      <header class="barra-superior">
+        <div class="izquierda-barra-superior">
+          <button class="boton-menu-movil" id="boton-menu-movil" aria-label="Abrir menú">☰</button>
+          <div class="titulos-barra-superior">
+            <span>Vista General</span>
+            <h2>Resumen General</h2>
+          </div>
+        </div>
+
+        <div class="acciones-barra-superior">
+          <button class="boton-campana" id="boton-notificaciones" aria-label="Notificaciones">
+            <img src="../sources/icono-campana.png" alt="Notificaciones" class="icono-campana">
+          </button>
+          <button class="boton-primario" id="boton-nueva-inspeccion">+ Nueva inspeccion</button>
+        </div>
+      </header>
+
+      <!-- contenido del dashboard -->
+      <main class="contenido-panel">
+        <div class="cuadricula-panel">
+          <!-- tarjeta 1-->
+          <article class="tarjeta-panel">
+            <div class="cabecera-tarjeta">
+              <div class="insignia-icono insignia-azul">
+                <img src="../sources/icono-inspecciones.png" alt="Total inspecciones" class="icono-tarjeta">
+              </div>
+              <h3>Total de<br>inspecciones</h3>
+            </div>
+            <div class="cifra-grande">150</div>
+            <div class="barra-estadistica">
+              <div class="relleno-barra relleno-negro" style="width: 76%;"></div>
+            </div>
+          </article>
+
+          <!-- tarjeta 2-->
+          <article class="tarjeta-panel">
+            <div class="cabecera-tarjeta">
+              <div class="insignia-icono insignia-roja">
+                <img src="../sources/icono-peligro.png" alt="Estructuras en peligro" class="icono-tarjeta">
+              </div>
+              <h3>Estructuras en<br>peligro</h3>
+            </div>
+            <div class="cifra-grande">12</div>
+            <div class="barra-estadistica">
+              <div class="relleno-barra relleno-rojo" style="width: 25%;"></div>
+            </div>
+          </article>
+
+          <!-- tarjeta 3-->
+          <article class="tarjeta-panel">
+            <div class="cabecera-tarjeta">
+              <div class="insignia-icono insignia-verde">
+                <img src="../sources/icono-comportamiento.png" alt="Comportamiento" class="icono-tarjeta">
+              </div>
+              <h3>Vista previa del<br>comportamiento</h3>
+            </div>
+            <span class="nota-tarjeta">(3 meses)</span>
+
+            <div class="contenedor-grafico">
+              <div class="grupo-grafico">
+                <div class="barras">
+                  <span class="barra barra-verde" style="height: 55px;"></span>
+                  <span class="barra barra-amarilla" style="height: 30px;"></span>
+                  <span class="barra barra-roja" style="height: 18px;"></span>
+                </div>
+                <span class="etiqueta-mes">enero</span>
+              </div>
+
+              <div class="grupo-grafico">
+                <div class="barras">
+                  <span class="barra barra-verde" style="height: 55px;"></span>
+                  <span class="barra barra-amarilla" style="height: 35px;"></span>
+                  <span class="barra barra-roja" style="height: 62px;"></span>
+                </div>
+                <span class="etiqueta-mes">febrero</span>
+              </div>
+
+              <div class="grupo-grafico">
+                <div class="barras">
+                  <span class="barra barra-verde" style="height: 58px;"></span>
+                  <span class="barra barra-amarilla" style="height: 34px;"></span>
+                  <span class="barra barra-roja" style="height: 45px;"></span>
+                </div>
+                <span class="etiqueta-mes">marzo</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4-->
+          <article class="tarjeta-panel">
+            <div class="cabecera-tarjeta">
+              <div class="insignia-icono insignia-alerta">
+                <img src="../sources/icono-alerta.png" alt="Ultimas alertas" class="icono-tarjeta">
+              </div>
+              <h3>Ultimas alertas</h3>
+            </div>
+
+            <ul class="lista-alertas">
+              <li class="elemento-alerta alerta-clicable" id="alerta-critica">
+                <span class="vineta vineta-roja"></span>
+                <span>Fisura critica detectada en la torre norte</span>
+              </li>
+              <li class="elemento-alerta">
+                <span class="vineta vineta-naranja"></span>
+                <span>Fisura leve en el puente este</span>
+              </li>
+              <li class="elemento-alerta">
+                <span class="vineta vineta-verde"></span>
+                <span>Inspeccion completada en el edificio</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
