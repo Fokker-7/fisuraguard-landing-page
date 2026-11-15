@@ -1,17 +1,17 @@
-/* PANTALLA 1 Login*/ 
+/* barra de navegación */
 .barra-navegacion-acceso {
   height: 68px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 48px;
   border-bottom: 1px solid #D5DCE6;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 .enlaces-navegacion-acceso {
-  margin-left: auto;
   display: flex;
-  gap: 32px;
+  gap: 36px;
 }
 
 .enlaces-navegacion-acceso a {
@@ -19,20 +19,20 @@
   color: var(--azul-marino);
   font-weight: 600;
   font-size: 0.98rem;
-  transition: color 0.2s ease;
 }
 
 .enlaces-navegacion-acceso a:hover {
   color: var(--naranja);
 }
 
+/* estrucutra de la pantalla dividida */
 .division-acceso {
   display: grid;
   grid-template-columns: 48% 52%;
   min-height: calc(100vh - 68px);
 }
 
-/* Panel izquierdo azul (donde esta la figura) */
+/* panel izquierdo azul */
 .acceso-izquierda {
   background-color: var(--azul-marino);
   color: #FFFFFF;
@@ -81,7 +81,6 @@
 .encabezado-inspeccion-activa h4 {
   font-size: 0.88rem;
   font-weight: 700;
-  color: #FFFFFF;
 }
 
 .pastilla-estado {
@@ -100,9 +99,15 @@
   border-radius: 50%;
 }
 
-.punto-naranja { background-color: var(--naranja); }
-.punto-verde   { background-color: var(--verde); }
-.punto-rojo    { background-color: var(--rojo); }
+.punto-naranja { 
+  background-color: var(--naranja); 
+}
+.punto-verde   { 
+  background-color: var(--verde); 
+}
+.punto-rojo    { 
+  background-color: var(--rojo); 
+}
 
 .caja-grafico-ia {
   position: relative;
@@ -113,10 +118,11 @@
   padding: 10px;
 }
 
-.edificio {
+.imagen-edificio-ia {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .insignia-ia {
@@ -146,7 +152,6 @@
 
 .cabecera-tarjeta-riesgo h3 {
   font-size: 1.05rem;
-  color: #FFFFFF;
 }
 
 .puntaje-riesgo {
@@ -160,13 +165,18 @@
   height: 6px;
   display: flex;
   border-radius: 4px;
-  overflow: visible;
   margin-bottom: 12px;
 }
 
-.segmento-verde   { flex: 1; background: var(--verde); border-radius: 4px 0 0 4px; }
-.segmento-naranja { flex: 1; background: var(--naranja); }
-.segmento-rojo    { flex: 1; background: var(--rojo); border-radius: 0 4px 4px 0; }
+.segmento-verde   { 
+  flex: 1; background: var(--verde); border-radius: 4px 0 0 4px; 
+}
+.segmento-naranja { 
+  flex: 1; background: var(--naranja); 
+}
+.segmento-rojo    { 
+  flex: 1; background: var(--rojo); border-radius: 0 4px 4px 0; 
+}
 
 .indicador-riesgo {
   position: absolute;
@@ -184,7 +194,7 @@
   color: #9AB0CF;
 }
 
-/* Panel erecho blanco (el formulario) */
+/* formulario de acceso  (derecha) */
 .acceso-derecha {
   display: flex;
   align-items: center;
@@ -214,14 +224,32 @@
 }
 
 .descripcion-acceso {
-  color: var(--texto-2);
+  color: var(--texto-secundario);
   font-size: 0.88rem;
   line-height: 1.4;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
+}
+
+/* Alertas de validación */
+.alerta-formulario {
+  background-color: #FDE8E8;
+  color: #B91C1C;
+  border: 1px solid #F8B4B4;
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.alerta-exito {
+  background-color: #DEF7EC;
+  color: #03543F;
+  border-color: #84E1BC;
 }
 
 .grupo-formulario {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .grupo-formulario label {
@@ -229,7 +257,7 @@
   color: var(--azul-marino);
   font-size: 0.82rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .fila-etiqueta {
@@ -245,6 +273,10 @@
   text-decoration: none;
 }
 
+.enlace-olvido:hover {
+  text-decoration: underline;
+}
+
 .contenedor-campo {
   position: relative;
 }
@@ -256,21 +288,28 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  color: #5A6B82;
+  object-fit: contain;
 }
 
-.contenedor-campo input {
+.contenedor-campo input,
+.selector-campo {
   width: 100%;
   padding: 11px 14px 11px 42px;
-  border: 1px solid #C4CDD5;
+  border: 1px solid #999;
   border-radius: 7px;
+  font-family: inherit;
   font-size: 0.92rem;
   outline: none;
-  transition: border-color 0.2s ease;
+  background-color: #FFFFFF;
 }
 
-.contenedor-campo input:focus {
-  border-color: var(--naranja);
+.selector-campo {
+  padding-left: 12px;
+}
+
+.contenedor-campo input:focus,
+.selector-campo:focus {
+  border-color: var(--azul-marino);
 }
 
 .fila-casilla {
@@ -280,101 +319,152 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--azul-marino);
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   cursor: pointer;
 }
 
-/*condicion*/
-.solo-movil {
-  display: none !important;
+.pie-formulario-acceso {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.84rem;
+  color: var(--texto-secundario);
 }
 
-/* PANTALLA 1 (CELULAR) */
-@media (max-width: 768px) {
-  /* alternar los dispositivos */
-  .solo-pc {
-    display: none !important;
-  }
-  .solo-movil {
-    display: block !important;
-  }
+.enlace-destacado {
+  color: var(--azul-marino);
+  font-weight: 700;
+  text-decoration: underline;
+}
 
-  /* cambiar las posiciones de las diviciones  */
+/* Registro y recuperacion de cuenta */
+.fondo-acceso {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(16, 37, 68, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 500;
+}
+
+.caja-acceso {
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 12px;
+  padding: 28px 30px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.cabecera-acceso {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.cabecera-acceso h3 {
+  color: var(--azul-marino);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.boton-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ayuda-campo {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--texto-secundario);
+  margin-top: 5px;
+}
+
+.estado-validacion {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.estado-validacion h4 {
+  color: var(--verde);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.estado-validacion p {
+  font-size: 0.86rem;
+  color: var(--texto-secundario);
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.boton-secundario {
+  background-color: var(--azul-marino);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*  Responvise  */
+@media (max-width: 768px) {
   .division-acceso {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
 
-  /* cuadro azul curvo en celular */
   .acceso-izquierda {
     padding: 24px 20px 32px;
     border-radius: 0 0 28px 28px;
-    background-color: var(--azul-marino);
-  }
-
-  .contenido-acceso-izquierda {
-    max-width: 100%;
-    position: relative;
-  }
-
-  .logo-marca-blanco {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-  }
-
-  .logo-marca-blanco span {
-    color: var(--naranja);
   }
 
   .eslogan-movil {
+    width: 100%;
     color: #FFFFFF;
-    font-size: 1.65rem;
-    font-weight: 900;
-    line-height: 1.15;
-    margin-bottom: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 14px 0 18px;
   }
 
   .caja-grafico-ia {
-    max-width: 260px;
+    max-width: 280px;
     margin: 0 auto;
   }
 
-  /* formulario  */
   .acceso-derecha {
-    padding: 30px 24px;
+    padding: 28px 24px;
     align-items: flex-start;
   }
 
   .contenedor-formulario-acceso h1 {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
   }
 
   .contenedor-campo input {
-    border-radius: 20px; /* bordes más redondeados */
+    border-radius: 18px;
   }
 
   .boton-bloque {
-    border-radius: 16px;
+    border-radius: 14px;
   }
-}
 
-/* Adaptación responsive */
-@media (max-width: 900px) {
-  .division-acceso {
+  .fila-doble {
     grid-template-columns: 1fr;
-  }
-  .barra-navegacion-acceso {
-    padding: 0 20px;
-  }
-  .enlaces-navegacion-acceso {
-    gap: 16px;
-  }
-  .acceso-izquierda,
-  .acceso-derecha {
-    padding: 32px 20px;
+    gap: 0;
   }
 }
-

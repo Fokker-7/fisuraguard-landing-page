@@ -11,13 +11,13 @@
   <!-- Fuente tipográfica Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+
 <!-- PANTALLA 1 (el inicio de sesion) -->
 <!-- iMPORTANTE: Definimos la class solo-pc para que ese codigo sea solo exclusivamente de la version pc
 y tambien definimos la clase solo-movil para poder mostrar mejor el inicio de sesion en las versiones de movil -->
+<body>
   <section id="vista-acceso" class="vista activo">
-    <!-- Barra de navegación-->
-    <header class="barra-navegacion-acceso solo-pc">
+    <header class="barra-navegacion-acceso solo-escritorio">
       <div class="logo-marca">Fisura<span>Guard</span></div>
       <nav class="enlaces-navegacion-acceso">
         <a href="#">Inicio</a>
@@ -27,16 +27,17 @@ y tambien definimos la clase solo-movil para poder mostrar mejor el inicio de se
     </header>
 
     <div class="division-acceso">
-      <!-- panel izquierdo azul -->
+      <!-- Panel Izquierdo Azul -->
       <div class="acceso-izquierda">
         <div class="contenido-acceso-izquierda">
-          <div class="logo-marca-blanco solo-movil">Fisura<span>Guard</span></div> <!-- en la version pc la "FISU" esta en azul y en movil no se podria ver -->
+          <div class="logo-marca-blanco solo-movil">Fisura<span>Guard</span></div>
 
-          <div class="solo-pc">
+          <div class="solo-escritorio">
             <h2 class="titulo-ia">Construccion apoyada con IA</h2>
             <p class="subtitulo-ia">
               Monitorea, analiza y gestiona daños estructurales desde una plataforma precisa y confiable.
             </p>
+
             <div class="encabezado-inspeccion-activa">
               <div>
                 <span class="etiqueta-pequena">INSPECCIÓN ACTIVA</span>
@@ -44,16 +45,12 @@ y tambien definimos la clase solo-movil para poder mostrar mejor el inicio de se
               </div>
               <div class="pastilla-estado">
                 <span class="punto-naranja"></span> EN PROCESO
-              </div>  
+              </div>
             </div>
           </div>
 
-          <!-- slogan exlsivo del movil -->
-          <h2 class="eslogan-movil solo-movil">
-            Detecta, analiza y protege.
-          </h2>
+          <h2 class="eslogan-movil solo-movil">Detecta. Analiza y protege.</h2>
 
-          <!-- este es compartido en ambas versiones-->
           <div class="caja-grafico-ia">
             <svg viewBox="0 0 360 210" class="edificio">
               <rect x="40" y="30" width="75" height="25" fill="none" stroke="#3c5a8a" stroke-width="1.5"/>
@@ -75,7 +72,8 @@ y tambien definimos la clase solo-movil para poder mostrar mejor el inicio de se
             <span class="insignia-ia">ANÁLISIS IA</span>
           </div>
 
-          <div class="tarjeta-riesgo solo-pc">
+          <!-- Tarjeta de Nivel de Riesgo -->
+          <div class="tarjeta-riesgo solo-escritorio">
             <div class="cabecera-tarjeta-riesgo">
               <div>
                 <span class="etiqueta-pequena">NIVEL DE RIESGO</span>
@@ -98,54 +96,162 @@ y tambien definimos la clase solo-movil para poder mostrar mejor el inicio de se
         </div>
       </div>
 
-      <!-- panel derecho blanco  -->
+      <!-- Panel Derecho Blanco -->
       <div class="acceso-derecha">
         <div class="contenedor-formulario-acceso">
           <span class="etiqueta-portal">PORTAL DE ACCESO</span>
-          <!-- en movil dice "Bienvenido" y en escritorio "Bienvenido de nuevo" -->
-          <h1 class="solo-pc">Bienvenido de nuevo</h1>
+          <h1 class="solo-escritorio">Bienvenido de nuevo</h1>
           <h1 class="solo-movil">Bienvenido</h1>
           <p class="descripcion-acceso">Ingresa tus credenciales para acceder al panel de inspecciones.</p>
 
-          <form id="formulario-acceso">
+          <!-- Alerta de errores de inicio de sesión o bloqueo por 5 intentos -->
+          <div id="alerta-acceso" class="alerta-formulario oculto" role="alert"></div>
+
+          <form id="formulario-acceso" novalidate>
             <div class="grupo-formulario">
-              <label for="correo">Usuario o correo electronico</label>
+              <label for="correo">Correo electrónico</label>
               <div class="contenedor-campo">
-                <svg class="icono-campo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="5" width="18" height="14" rx="2"/>
-                  <polyline points="3,7 12,13 21,7"/>
-                </svg>
-                <input type="text" id="correo" placeholder="angelo@fisuraguard.pe" required>
+                <img src="img/icono-correo.png" alt="Correo" class="icono-campo">
+                <input type="email" id="correo" placeholder="angelo@fisuraguard.pe" required>
               </div>
             </div>
 
+            <!-- Solicitar contraseña y enlace de recuperación -->
             <div class="grupo-formulario">
               <div class="fila-etiqueta">
                 <label for="contrasena">Contraseña</label>
-                <a href="#" class="enlace-olvido">¿Olvidaste tu contraseña?</a>
+                <a href="#" id="enlace-recuperar" class="enlace-olvido">¿Olvidaste tu contraseña?</a>
               </div>
               <div class="contenedor-campo">
-                <svg class="icono-campo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="5" y="11" width="14" height="10" rx="2"/>
-                  <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-                </svg>
+                <img src="img/icono-candado.png" alt="Contraseña" class="icono-campo">
                 <input type="password" id="contrasena" placeholder="••••••••" required>
               </div>
             </div>
 
             <label class="fila-casilla">
-              <input type="checkbox">
+              <input type="checkbox" id="recordar-dispositivo">
               <span>Recordarme en este dispositivo</span>
             </label>
 
-            <button type="submit" class="boton-primario boton-bloque">Iniciar sesion</button>
+            <button type="submit" id="boton-ingresar" class="boton-primario boton-bloque">Iniciar sesion</button>
           </form>
+
+          <!-- Registro de nuevos usuarios -->
+          <p class="pie-formulario-acceso">
+            ¿No tienes una cuenta profesional? 
+            <a href="#" id="enlace-registro" class="enlace-destacado">o crear cuenta</a>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Enlace hacia la lógica JS -->
+  <!-- Registro -->
+  <div id="registro" class="fondo-acceso oculto">
+    <div class="caja-acceso">
+      <div class="cabecera-acceso">
+        <div>
+          <span class="etiqueta-portal">ACREDITACIÓN PROFESIONAL</span>
+          <h3>Crear cuenta en FisuraGuard</h3>
+        </div>
+        <button type="button" class="boton-cerrar" id="cerrar-registro">✕</button>
+      </div>
+
+      <div id="alerta-registro" class="alerta-formulario oculto"></div>
+
+      <!-- Formulario de registro -->
+      <form id="formulario-registro" novalidate>
+        <div class="grupo-formulario">
+          <label for="reg-nombres">Nombres y apellidos completos</label>
+          <div class="contenedor-campo">
+            <img src="img/icono-usuario.png" alt="Usuario" class="icono-campo">
+            <input type="text" id="reg-nombres" placeholder="Ej. Manuel Mendoza" required>
+          </div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="reg-correo">Correo institucional</label>
+          <div class="contenedor-campo">
+            <img src="img/icono-correo.png" alt="Correo" class="icono-campo">
+            <input type="email" id="reg-correo" placeholder="nombre@entidad.gob.pe" required>
+          </div>
+        </div>
+
+        <div class="fila-doble">
+          <div class="grupo-formulario">
+            <label for="reg-rol">Rol a desempeñar</label>
+            <select id="reg-rol" class="selector-campo" required>
+              <option value="inspector">Ingeniero Inspector</option>
+              <option value="brigadista">Brigadista de Riesgos</option>
+              <option value="supervisor">Supervisor de Obra</option>
+            </select>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="reg-cip">Colegiatura (CIP)</label>
+            <div class="contenedor-campo">
+              <img src="img/icono-cip.png" alt="CIP" class="icono-campo">
+              <input type="text" id="reg-cip" placeholder="Ej. 248910" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="reg-contrasena">Contraseña</label>
+          <div class="contenedor-campo">
+            <img src="img/icono-candado.png" alt="Contraseña" class="icono-campo">
+            <input type="password" id="reg-contrasena" placeholder="Mín. 8 caracteres, 1 mayúscula y 1 número" required>
+          </div>
+          <small class="ayuda-campo">Debe incluir al menos 8 caracteres, una mayúscula y un número.</small>
+        </div>
+
+        <button type="submit" class="boton-primario boton-bloque">Registrarse</button>
+      </form>
+
+      <!-- Confirmación de envío de validación  -->
+      <div id="paso-validacion-correo" class="estado-validacion oculto">
+        <h4>¡Perfil registrado correctamente!</h4>
+        <p id="texto-validacion-enviada">
+          Hemos enviado un enlace de activación con vigencia limitada a tu correo institucional.
+        </p>
+        <button type="button" id="boton-reenviar-validacion" class="boton-secundario">
+          Reenviar correo de validación
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recuperar contraseña -->
+  <div id="recuperar" class="fondo-acceso oculto">
+    <div class="caja-acceso">
+      <div class="cabecera-acceso">
+        <div>
+          <span class="etiqueta-portal">SOPORTE DE ACCESO</span>
+          <h3>Restablecer contraseña</h3>
+        </div>
+        <button type="button" class="boton-cerrar" id="cerrar-recuperar">✕</button>
+      </div>
+
+      <p class="descripcion-acceso">
+        Ingresa tu correo registrado. Te enviaremos un token de recuperación único con validez de 24 horas.
+      </p>
+
+      <div id="alerta-recuperar" class="alerta-formulario alerta-exito oculto"></div>
+
+      <form id="formulario-recuperar" novalidate>
+        <div class="grupo-formulario">
+          <label for="rec-correo">Correo electrónico registrado</label>
+          <div class="contenedor-campo">
+            <img src="img/icono-correo.png" alt="Correo" class="icono-campo">
+            <input type="email" id="rec-correo" placeholder="angelo@fisuraguard.pe" required>
+          </div>
+        </div>
+
+        <button type="submit" class="boton-primario boton-bloque">Enviar enlace</button>
+      </form>
+    </div>
+  </div>
+    <!-- Enlace hacia la lógica JS -->
   <script src="../js/main.js"></script>
 </body>
 </html>
