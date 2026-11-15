@@ -85,15 +85,15 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
-}
-
-.boton-primario:hover {
-  background-color: var(--naranja-activo);
 }
 
 .boton-primario:active {
   transform: scale(0.99);
+}
+
+.boton-primario:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .boton-bloque {

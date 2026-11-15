@@ -1,4 +1,4 @@
-/* barra de navegación */
+/* BARRA DE NAVEGACIÓN SUPERIOR */
 .barra-navegacion-acceso {
   height: 68px;
   display: flex;
@@ -25,14 +25,14 @@
   color: var(--naranja);
 }
 
-/* estrucutra de la pantalla dividida */
+/* division blanca */
 .division-acceso {
   display: grid;
   grid-template-columns: 48% 52%;
   min-height: calc(100vh - 68px);
 }
 
-/* panel izquierdo azul */
+/* Panel Izquierdo Azul */
 .acceso-izquierda {
   background-color: var(--azul-marino);
   color: #FFFFFF;
@@ -92,7 +92,9 @@
   gap: 6px;
 }
 
-.punto-naranja, .punto-verde, .punto-rojo {
+.punto-naranja,
+.punto-verde,
+.punto-rojo {
   display: inline-block;
   width: 7px;
   height: 7px;
@@ -109,20 +111,20 @@
   background-color: var(--rojo); 
 }
 
+/* Gráfico del edificio */
 .caja-grafico-ia {
   position: relative;
   border: 1px solid #2A4978;
   background-color: rgba(16, 37, 68, 0.45);
   border-radius: 4px;
   margin-bottom: 24px;
-  padding: 10px;
+  padding: 8px;
 }
 
-.imagen-edificio-ia {
+.edificio {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
 }
 
 .insignia-ia {
@@ -137,6 +139,7 @@
   border-radius: 3px;
 }
 
+/* Tarjeta Nivel de Riesgo */
 .tarjeta-riesgo {
   background-color: var(--azul-oscuro);
   padding: 16px 20px;
@@ -171,9 +174,11 @@
 .segmento-verde   { 
   flex: 1; background: var(--verde); border-radius: 4px 0 0 4px; 
 }
+
 .segmento-naranja { 
   flex: 1; background: var(--naranja); 
 }
+
 .segmento-rojo    { 
   flex: 1; background: var(--rojo); border-radius: 0 4px 4px 0; 
 }
@@ -194,7 +199,7 @@
   color: #9AB0CF;
 }
 
-/* formulario de acceso  (derecha) */
+/* panel del formulario */
 .acceso-derecha {
   display: flex;
   align-items: center;
@@ -240,6 +245,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   margin-bottom: 18px;
+  line-height: 1.35;
 }
 
 .alerta-exito {
@@ -305,6 +311,7 @@
 
 .selector-campo {
   padding-left: 12px;
+  cursor: pointer;
 }
 
 .contenedor-campo input:focus,
@@ -336,11 +343,15 @@
   text-decoration: underline;
 }
 
-/* Registro y recuperacion de cuenta */
+.enlace-destacado:hover {
+  color: var(--naranja);
+}
+
+/*Registro y recuperar cuienta */
 .fondo-acceso {
   position: fixed;
   inset: 0;
-  background-color: rgba(16, 37, 68, 0.55);
+  background-color: rgba(16, 37, 68, 0.58);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,6 +366,8 @@
   border-radius: 12px;
   padding: 28px 30px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  max-height: 92vh;
+  overflow-y: auto;
 }
 
 .cabecera-acceso {
@@ -373,9 +386,14 @@
 .boton-cerrar {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #666;
   cursor: pointer;
+  padding: 2px 6px;
+}
+
+.boton-cerrar:hover {
+  color: var(--rojo);
 }
 
 .fila-doble {
@@ -414,12 +432,37 @@
   color: #FFFFFF;
   border: none;
   border-radius: 7px;
-  padding: 10px 18px;
+  padding: 11px 18px;
+  font-family: inherit;
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
 }
 
-/*  Responvise  */
+.boton-secundario:hover {
+  background-color: var(--azul-oscuro);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .division-acceso {
+    grid-template-columns: 1fr;
+  }
+
+  .barra-navegacion-acceso {
+    padding: 0 20px;
+  }
+
+  .enlaces-navegacion-acceso {
+    gap: 16px;
+  }
+
+  .acceso-izquierda,
+  .acceso-derecha {
+    padding: 32px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .division-acceso {
     display: flex;

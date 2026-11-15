@@ -1,19 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Usuarios registrados (simulación de base de datos) 
+    // Usuarios precargados para pruebas
     const usuariosRegistrados = [
-        { nombres: 'Angelo', correo: 'angelo@fisuraguard.pe', clave: 'Admin123', rol: 'supervisor', cip: '210455', verificado: true },
-        { nombres: 'Manuel', correo: 'manuel@fisuraguard.pe', clave: 'Campo123', rol: 'inspector', cip: '248910', verificado: true },
-        { nombres: 'Jorge', correo: 'jorge@fisuraguard.pe', clave: 'Rescate123', rol: 'brigadista', cip: '198342', verificado: true }
+        { nombres: 'Angelo', correo: 'angelo@fisuraguard.pe', clave: 'Admin123', rol: 'supervisor', cip: '210455' },
+        { nombres: 'Manuel', correo: 'manuel@fisuraguard.pe', clave: 'Campo123', rol: 'inspector', cip: '248910' },
+        { nombres: 'Jorge', correo: 'jorge@fisuraguard.pe', clave: 'Rescate123', rol: 'brigadista', cip: '198342' }
     ];
 
-    // Referencias del formulario 
+    // Referencias del Login
     const formularioAcceso = document.getElementById('formulario-acceso');
     const campoCorreo = document.getElementById('correo');
     const campoContrasena = document.getElementById('contrasena');
+    const checkRecordar = document.getElementById('recordar-dispositivo');
     const botonIngresar = document.getElementById('boton-ingresar');
     const alertaAcceso = document.getElementById('alerta-acceso');
 
-    // Control de intentos fallidos
+    // Cargar correo recordado si el usuario marcó la casilla anteriormente
+    const correoGuardado = localStorage.getItem('correoRecordado');
+    if (correoGuardado) {
+        campoCorreo.value = correoGuardado;
+        checkRecordar.checked = true;
+    }
+
+    // Control de bloqueo tras 5 intentos fallidos
     let intentosFallidos = 0;
     let cuentaBloqueada = false;
 
@@ -33,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const intervalo = setInterval(() => {
             mostrarAlerta(
             alertaAcceso,
-            `Cuenta bloqueada temporalmente por 5 intentos fallidos. Intenta de nuevo en ${segundosRestantes}s.`
+            `Cuenta bloqueada temporalmente por 5 intentos fallidos. Intenta nuevamente en ${segundosRestantes}s.`
             );
             segundosRestantes--;
 
@@ -49,21 +57,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-    //Inicio de sesion
+    //Inicio de sesión
     formularioAcceso.addEventListener('submit', (evento) => {
-    evento.preventDefault();
-    if (cuentaBloqueada) return;
+     evento.preventDefault();
+        if (cuentaBloqueada) return;
 
-    const correo = campoCorreo.value.trim().toLowerCase();
-    const clave = campoContrasena.value;
+        const correo = campoCorreo.value.trim().toLowerCase();
+        const clave = campoContrasena.value;
 
-    const usuarioEncontrado = usuariosRegistrados.find(
-    u => u.correo === correo && u.clave === clave
-    );
+        if (!correo || !clave) {
+            mostrarAlerta(alertaAcceso, 'Por favor, ingresa tu correo electrónico y contraseña.');
+            return;
+        }
 
-    //Credenciales incorrectas
-    if (!usuarioEncontrado) {
-        intentosFallidos++;
+        const usuarioEncontrado = usuariosRegistrados.find(
+        (u) => u.correo === correo && u.clave === clave
+        );
+
+        if (!usuarioEncontrado) {
+            intentosFallidos++;
         if (intentosFallidos >= 5) {
             bloquearTemporalmente();
         } else {
@@ -73,31 +85,47 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
         return;
-    }
+        }
 
-        // Acceso válido -> Guardar sesión
+        // Guardar o limpiar correo recordado
+        if (checkRecordar.checked) {
+        localStorage.setItem('correoRecordado', correo);
+        } else {
+        localStorage.removeItem('correoRecordado');
+        }
+
         intentosFallidos = 0;
         alertaAcceso.classList.add('oculto');
         localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
-    });
 
-    //Registro y validacion de correo 
-    const modalRegistro = document.getElementById('modal-registro');
+        // Redirección a la Página 2 
+        window.location.href = '../index2.html';
+    });
+ 
+    // Registro de usuarios
+    const modalRegistro = document.getElementById('registro');
     const formularioRegistro = document.getElementById('formulario-registro');
     const alertaRegistro = document.getElementById('alerta-registro');
     const pasoValidacionCorreo = document.getElementById('paso-validacion-correo');
     let ultimoCorreoRegistrado = '';
 
-    document.getElementById('enlace-registro').addEventListener('click', (e) => {
-        e.preventDefault();
+    document.getElementById('enlace-registro').addEventListener('click', (evento) => {
+        evento.preventDefault();
         alertaRegistro.classList.add('oculto');
+        formularioRegistro.reset();
         formularioRegistro.classList.remove('oculto');
         pasoValidacionCorreo.classList.add('oculto');
         modalRegistro.classList.remove('oculto');
     });
 
-    document.getElementById('cerrar-modal-registro').addEventListener('click', () => {
+    document.getElementById('cerrar-registro').addEventListener('click', () => {
         modalRegistro.classList.add('oculto');
+    });
+
+    modalRegistro.addEventListener('click', (evento) => {
+        if (evento.target === modalRegistro) {
+            modalRegistro.classList.add('oculto');
+        }
     });
 
     formularioRegistro.addEventListener('submit', (evento) => {
@@ -109,19 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const cip = document.getElementById('reg-cip').value.trim();
         const clave = document.getElementById('reg-contrasena').value;
 
-        //  Campos obligatorios incluyendo CIP
         if (!nombres || !correo || !cip || !clave) {
-            mostrarAlerta(alertaRegistro, 'Completa todos los campos obligatorios, incluyendo tu número de CIP.');
+            mostrarAlerta(alertaRegistro, 'Completa todos los campos obligatorios, incluyendo tu colegiatura CIP.');
         return;
         }
 
-        // HU-01 CA03: Validar que el correo no esté registrado previamente
-        if (usuariosRegistrados.some(u => u.correo === correo)) {
-            mostrarAlerta(alertaRegistro, 'Este correo institucional ya se encuentra registrado en el sistema.');
+        if (usuariosRegistrados.some((u) => u.correo === correo)) {
+            mostrarAlerta(alertaRegistro, 'Este correo institucional ya está registrado en la plataforma.');
         return;
         }
 
-        // HU-01 CA02: Mínimo 8 caracteres, al menos un número y una letra mayúscula
+        // Mínimo 8 caracteres, 1 mayúscula y 1 número
         const politicaClave = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
         if (!politicaClave.test(clave)) {
             mostrarAlerta(
@@ -131,52 +157,75 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
         }
 
-        // Guardar nuevo usuario y activar vista de validación de correo (HU-04)
-        usuariosRegistrados.push({ nombres, correo, clave, rol, cip, verificado: true });
+        usuariosRegistrados.push({ nombres, correo, clave, rol, cip });
         ultimoCorreoRegistrado = correo;
         alertaRegistro.classList.add('oculto');
         formularioRegistro.classList.add('oculto');
+
         document.getElementById('texto-validacion-enviada').textContent =
-        `Hemos enviado un enlace de validación a ${correo}. Revisa tu bandeja para activar tu cuenta.`;
+        `Hemos enviado un enlace de activación con vigencia limitada a ${correo}.`;
         pasoValidacionCorreo.classList.remove('oculto');
     });
 
-    //Reeviar validacion
     document.getElementById('boton-reenviar-validacion').addEventListener('click', () => {
         mostrarAlerta(
-            alertaRegistro,
-            `Correo de validación reenviado a ${ultimoCorreoRegistrado}.`,
-            true
+        alertaRegistro,
+        `Correo de validación reenviado a ${ultimoCorreoRegistrado}.`,
+        true
         );
     });
 
-    //Reperacion de correo
-    const modalRecuperar = document.getElementById('modal-recuperar');
+    //Recuperar cuenta
+    const modalRecuperar = document.getElementById('recuperar');
     const formularioRecuperar = document.getElementById('formulario-recuperar');
     const alertaRecuperar = document.getElementById('alerta-recuperar');
 
-    document.getElementById('enlace-recuperar').addEventListener('click', (e) => {
-    e.preventDefault();
-    alertaRecuperar.classList.add('oculto');
-    formularioRecuperar.reset();
-    modalRecuperar.classList.remove('oculto');
-    });
-
-    document.getElementById('cerrar-modal-recuperar').addEventListener('click', () => {
-    modalRecuperar.classList.add('oculto');
-    });
-
-    formularioRecuperar.addEventListener('submit', (evento) => {
+    document.getElementById('enlace-recuperar').addEventListener('click', (evento) => {
         evento.preventDefault();
-        const correo = document.getElementById('rec-correo').value.trim();
+        alertaRecuperar.classList.add('oculto');
+        formularioRecuperar.reset();
+        modalRecuperar.classList.remove('oculto');
+    });
 
-        if (!correo) return;
+    document.getElementById('cerrar-recuperar').addEventListener('click', () => {
+        modalRecuperar.classList.add('oculto');
+    });
 
-        //Mensaje de confirmacion de envio de correo de recuperacion 
+    modalRecuperar.addEventListener('click', (evento) => {
+        if (evento.target === modalRecuperar) {
+            modalRecuperar.classList.add('oculto');
+        }
+    });
+
+formularioRecuperar.addEventListener('submit', (evento) => {
+        evento.preventDefault();
+        const correo = document.getElementById('rec-correo').value.trim().toLowerCase();
+
+        // validar que el campo no esté vacío
+        if (!correo) {
+            mostrarAlerta(alertaRecuperar, 'Por favor, ingresa tu correo electrónico.', false);
+            return;
+        }
+
+        //validar formato correcto de correo
+        const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!formatoCorreo.test(correo)) {
+            mostrarAlerta(alertaRecuperar, 'Ingresa un correo electrónico válido (ej. angelo@fisuraguard.pe).', false);
+            return;
+        }
+
+        // validar que el correo exista
+        const usuarioExiste = usuariosRegistrados.some((u) => u.correo === correo);
+        if (!usuarioExiste) {
+            mostrarAlerta(alertaRecuperar, 'El correo ingresado no está registrado en FisuraGuard.', false);
+            return;
+        }
+
         mostrarAlerta(
             alertaRecuperar,
             'Recibirá un enlace de recuperación válido por 24 horas.',
             true
         );
+        formularioRecuperar.reset();
     });
 });
