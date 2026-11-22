@@ -1,9 +1,32 @@
-/*estilos de la pag 2*/
+
 .contenido-panel {
-  padding: 36px 44px;
+  padding: 28px 44px 36px;
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.barra-filtro-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.etiqueta-filtro {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--azul-marino);
+}
+
+.selector-filtro-panel {
+  padding: 8px 14px;
+  border: 1px solid var(--borde-gris);
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--texto-1);
+  background-color: #FFFFFF;
 }
 
 .cuadricula-panel {
@@ -38,7 +61,6 @@
   line-height: 1.2;
 }
 
-/* Contenedores e imágenes tarjetas */
 .insignia-icono {
   width: 44px;
   height: 44px;
@@ -62,6 +84,7 @@
 .insignia-roja  { 
   background-color: #F6D8D8; 
 }
+
 .insignia-verde { 
   background-color: #DCF2E1; 
 }
@@ -75,7 +98,6 @@
   height: 38px;
 }
 
-/* Cifras y barras de progreso */
 .cifra-grande {
   font-size: 3rem;
   font-weight: 700;
@@ -98,6 +120,7 @@
 .relleno-negro { 
   background-color: #111; 
 }
+
 .relleno-rojo  { 
   background-color: var(--rojo); 
 }
@@ -109,7 +132,7 @@
   margin-bottom: auto;
 }
 
-/* Gráfico de Barras Trimestral */
+/* grafico de barras */
 .contenedor-grafico {
   display: flex;
   justify-content: space-around;
@@ -140,9 +163,11 @@
 .barra-verde    { 
   background-color: #1ED700; 
 }
+
 .barra-amarilla { 
   background-color: #FFD600; 
 }
+
 .barra-roja     { 
   background-color: #FF1E00; 
 }
@@ -153,7 +178,7 @@
   margin-top: 8px;
 }
 
-/* Lista de Últimas Alertas */
+/* ultimas alertas */
 .lista-alertas {
   list-style: none;
   display: flex;
@@ -174,7 +199,6 @@
 
 .alerta-clicable {
   cursor: pointer;
-  transition: color 0.15s ease;
 }
 
 .alerta-clicable:hover {
@@ -189,75 +213,78 @@
   flex-shrink: 0;
 }
 
-.vineta-roja    { 
-  background-color: var(--rojo); 
-}
-.vineta-naranja { 
-  background-color: #FF8A00; 
-}
-.vineta-verde   { 
-  background-color: #19B500; 
-}
+.vineta-roja    { background-color: var(--rojo); }
+.vineta-naranja { background-color: #FF8A00; }
+.vineta-verde   { background-color: #19B500; }
 
 @media (min-width: 1400px) {
-  .contenido-panel {
-    padding: 44px 56px;
+  .contenido-panel { 
+    padding: 40px 56px; 
   }
 
   .cuadricula-panel {
-    gap: 40px 48px;
+    gap: 40px 48px; 
+    }
+  
+  .tarjeta-panel { 
+    padding: 34px 40px; min-height: 290px; 
   }
 
-  .tarjeta-panel {
-    padding: 34px 40px;
-    min-height: 290px;
-  }
-
-  .cabecera-tarjeta h3 {
-    font-size: 1.3rem;
+  .cabecera-tarjeta h3 { 
+    font-size: 1.3rem; 
   }
 
   .insignia-icono {
-    width: 52px;
-    height: 52px;
+    width: 52px; height: 52px; 
   }
 
   .icono-tarjeta {
-    width: 28px;
-    height: 28px;
+     width: 28px; height: 28px; 
+  }
+  .insignia-alerta .icono-tarjeta { 
+    width: 44px; height: 44px; 
   }
 
-  .insignia-alerta .icono-tarjeta {
-    width: 44px;
-    height: 44px;
+  .cifra-grande { 
+    font-size: 3.8rem; 
   }
-
-  .cifra-grande {
-    font-size: 3.8rem;
-  }
-
   .barras {
-    height: 110px;
-    gap: 6px;
+    height: 110px; gap: 6px; 
   }
-
-  .barra {
-    width: 13px;
+  .barra { 
+    width: 13px; 
   }
-
-  .elemento-alerta {
-    font-size: 1.12rem;
+  .elemento-alerta { 
+    font-size: 1.12rem; 
   }
 }
 
+@media (max-width: 768px) {
+  .contenido-panel { 
+    padding: 24px 18px; 
+  }
+
+  .cuadricula-panel { 
+    grid-template-columns: 1fr; gap: 20px; 
+  }
+}
 
 @media (max-width: 768px) {
   .contenido-panel {
-    padding: 24px 18px;
+    padding: 22px 16px;
   }
 
   .cuadricula-panel {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
+  }
+
+  .tarjeta-panel {
+    padding: 22px 20px;
+    min-height: auto;
+  }
+
+  .cifra-grande {
+    font-size: 2.4rem;
   }
 }

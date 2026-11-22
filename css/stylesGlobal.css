@@ -7,7 +7,6 @@
   --naranja-oscuro: #E55A00;
   --rojo: #D32F2F;
   --verde: #2E7D32;
-  --amarillo: #F57F17;
   --fondo-claro: #F8F9FA;
   --texto-1: #212121;
   --texto-2: #5A6B82;
@@ -15,9 +14,7 @@
   --fondo-tarjeta: #F4F5F7;
   --borde-gris: #AEAEAE;
 }
-/* ==========================================
-   REINICIO BASE Y CLASES DE VISIBILIDAD
-   ========================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,7 +23,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--texto-oscuro);
+  color: var(--texto-1);
   background-color: #FFFFFF;
   min-height: 100vh;
   overflow-x: hidden;
@@ -40,9 +37,6 @@ body {
   display: none !important;
 }
 
-/* ==========================================
-   IDENTIDAD DE MARCA Y ETIQUETAS DE SECCIÓN
-   ========================================== */
 .logo-marca {
   font-size: 1.35rem;
   font-weight: 700;
@@ -173,7 +167,7 @@ body {
 }
 
 .elemento-navegacion.activo {
-  background-color: var(--azul-pastilla);
+  background-color: var(--azul-marino);
 }
 
 .icono-navegacion {
@@ -345,4 +339,60 @@ body {
   height: 26px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .solo-escritorio {
+    display: none !important;
+  }
+
+  .solo-movil {
+    display: block !important;
+  }
+
+  .boton-menu-movil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .barra-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    transform: translateX(-100%);
+  }
+
+  .barra-lateral.abierto {
+    transform: translateX(0);
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .barra-superior {
+    height: auto;
+    min-height: 68px;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .titulos-barra-superior h2 {
+    font-size: 1.15rem;
+  }
+
+  .acciones-barra-superior {
+    gap: 10px;
+  }
+
+  .acciones-barra-superior .boton-primario {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .boton-campana {
+    display: none;
+  }
 }

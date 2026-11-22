@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FisuraGuard - Resumen General</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/stylespag2.css">
   <link rel="stylesheet" href="../css/stylesGlobal.css">
-  <script src="../js/panel.js" defer></script>
+  <link rel="stylesheet" href="../css/stylespag2.css">
 </head>
 <body>
+
   <div class="diseno-aplicacion">
     <!-- Barra Lateral Izquierda -->
     <aside class="barra-lateral" id="barra-lateral">
@@ -20,23 +20,23 @@
       <div class="menu-barra-lateral">
         <span class="subtitulo-menu">Menu principal</span>
         <nav class="lista-navegacion">
-          <a href="panel.html" class="elemento-navegacion activo">
-            <img src="../sources/icono-dashboard.png" alt="Dashboard" class="icono-navegacion">
+          <a href="index2.html" class="elemento-navegacion activo">
+            <img src="../img/icono-dashboard.png" alt="Dashboard" class="icono-navegacion">
             <span>Dashboard</span>
           </a>
 
           <a href="#" class="elemento-navegacion">
-            <img src="../sources/icono-proyectos.png" alt="Proyectos" class="icono-navegacion">
+            <img src="../img/icono-proyectos.png" alt="Proyectos" class="icono-navegacion">
             <span>Proyectos</span>
           </a>
 
           <a href="#" class="elemento-navegacion">
-            <img src="../sources/icono-mapa.png" alt="Mapa" class="icono-navegacion">
+            <img src="../img/icono-mapa.png" alt="Mapa" class="icono-navegacion">
             <span>Mapa</span>
           </a>
 
-          <a href="inspeccion.html" class="elemento-navegacion">
-            <img src="../sources/icono-reportes.png" alt="Reportes" class="icono-navegacion">
+          <a href="index3.html" class="elemento-navegacion">
+            <img src="../img/icono-reportes.png" alt="Reportes" class="icono-navegacion">
             <span>Reportes</span>
           </a>
         </nav>
@@ -44,7 +44,7 @@
 
       <div class="usuario-barra-lateral" id="boton-cerrar-sesion" title="Cerrar sesión">
         <div class="circulo-avatar">
-          <img src="../sources/avatar-supervisor.png" alt="Angelo" class="imagen-avatar">
+          <img src="../img/avatar-supervisor.png" alt="Angelo" class="imagen-avatar">
         </div>
         <div class="datos-usuario">
           <strong>Angelo</strong>
@@ -53,7 +53,7 @@
       </div>
     </aside>
 
-    <!-- area principal derecha -->
+    <!-- Área Principal Derecha -->
     <div class="area-principal">
       <header class="barra-superior">
         <div class="izquierda-barra-superior">
@@ -65,21 +65,21 @@
         </div>
 
         <div class="acciones-barra-superior">
-          <button class="boton-campana" id="boton-notificaciones" aria-label="Notificaciones">
-            <img src="../sources/icono-campana.png" alt="Notificaciones" class="icono-campana">
+          <button type="button" class="boton-campana" id="boton-campana" aria-label="Notificaciones">
+            <img src="../img/icono-campana.png" alt="Notificaciones" class="icono-campana">
           </button>
-          <button class="boton-primario" id="boton-nueva-inspeccion">+ Nueva inspeccion</button>
+          <button type="button" class="boton-primario" id="boton-nueva-inspeccion">+ Nueva inspeccion</button>
         </div>
       </header>
 
-      <!-- contenido del dashboard -->
       <main class="contenido-panel">
         <div class="cuadricula-panel">
-          <!-- tarjeta 1-->
+          
+          <!-- Tarjeta 1(Total de inspecciones) -->
           <article class="tarjeta-panel">
             <div class="cabecera-tarjeta">
               <div class="insignia-icono insignia-azul">
-                <img src="../sources/icono-inspecciones.png" alt="Total inspecciones" class="icono-tarjeta">
+                <img src="../img/icono-inspecciones.png" alt="Total inspecciones" class="icono-tarjeta">
               </div>
               <h3>Total de<br>inspecciones</h3>
             </div>
@@ -89,11 +89,11 @@
             </div>
           </article>
 
-          <!-- tarjeta 2-->
+          <!-- Tarjeta 2 (Estructuras en peligro)-->
           <article class="tarjeta-panel">
             <div class="cabecera-tarjeta">
               <div class="insignia-icono insignia-roja">
-                <img src="../sources/icono-peligro.png" alt="Estructuras en peligro" class="icono-tarjeta">
+                <img src="../img/icono-peligro.png" alt="Estructuras en peligro" class="icono-tarjeta">
               </div>
               <h3>Estructuras en<br>peligro</h3>
             </div>
@@ -103,11 +103,11 @@
             </div>
           </article>
 
-          <!-- tarjeta 3-->
+          <!-- Tarjeta 3 (Vista previa del comportamiento) -->
           <article class="tarjeta-panel">
             <div class="cabecera-tarjeta">
               <div class="insignia-icono insignia-verde">
-                <img src="../sources/icono-comportamiento.png" alt="Comportamiento" class="icono-tarjeta">
+                <img src="../img/icono-comportamiento.png" alt="Comportamiento" class="icono-tarjeta">
               </div>
               <h3>Vista previa del<br>comportamiento</h3>
             </div>
@@ -143,11 +143,11 @@
             </div>
           </article>
 
-          <!-- Tarjeta 4-->
+          <!-- Tarjeta 4 (Ultimas alertas) -->
           <article class="tarjeta-panel">
             <div class="cabecera-tarjeta">
               <div class="insignia-icono insignia-alerta">
-                <img src="../sources/icono-alerta.png" alt="Ultimas alertas" class="icono-tarjeta">
+                <img src="../img/icono-alerta.png" alt="Ultimas alertas" class="icono-tarjeta">
               </div>
               <h3>Ultimas alertas</h3>
             </div>
@@ -167,9 +167,12 @@
               </li>
             </ul>
           </article>
+
         </div>
       </main>
     </div>
   </div>
+    <!-- Enlace hacia la lógica JS -->
+  <script src="../js/main2.js"></script>
 </body>
 </html>

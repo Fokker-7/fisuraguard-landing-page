@@ -229,7 +229,7 @@
 }
 
 .descripcion-acceso {
-  color: var(--texto-secundario);
+  color: var(--texto-2);
   font-size: 0.88rem;
   line-height: 1.4;
   margin-bottom: 22px;
@@ -334,7 +334,7 @@
   text-align: center;
   margin-top: 18px;
   font-size: 0.84rem;
-  color: var(--texto-secundario);
+  color: var(--texto-2);
 }
 
 .enlace-destacado {
@@ -405,7 +405,7 @@
 .ayuda-campo {
   display: block;
   font-size: 0.72rem;
-  color: var(--texto-secundario);
+  color: var(--texto-2);
   margin-top: 5px;
 }
 
@@ -422,7 +422,7 @@
 
 .estado-validacion p {
   font-size: 0.86rem;
-  color: var(--texto-secundario);
+  color: var(--texto-2);
   margin-bottom: 18px;
   line-height: 1.4;
 }

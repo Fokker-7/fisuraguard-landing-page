@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FisuraGuard - Inspección #104</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/stylesGlobal.css">
+  <link rel="stylesheet" href="../css/stylespag3.css">
+</head>
+<body>
+
+  <div class="diseno-aplicacion">
+    <!-- Barra Lateral Izquierda -->
+    <aside class="barra-lateral" id="barra-lateral">
+      <div class="marca-barra-lateral">
+        <div class="logo-marca">Fisura<span>Guard</span></div>
+      </div>
+
+      <div class="menu-barra-lateral">
+        <span class="subtitulo-menu">Menu principal</span>
+        <nav class="lista-navegacion">
+          <a href="index2.html" class="elemento-navegacion">
+            <img src="../img/icono-dashboard.png" alt="Dashboard" class="icono-navegacion">
+            <span>Dashboard</span>
+          </a>
+
+          <a href="#" class="elemento-navegacion">
+            <img src="../img/icono-proyectos.png" alt="Proyectos" class="icono-navegacion">
+            <span>Proyectos</span>
+          </a>
+
+          <a href="#" class="elemento-navegacion">
+            <img src="../img/icono-mapa.png" alt="Mapa" class="icono-navegacion">
+            <span>Mapa</span>
+          </a>
+
+          <a href="index3.html" class="elemento-navegacion activo">
+            <img src="../img/icono-reportes.png" alt="Reportes" class="icono-navegacion">
+            <span>Reportes</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="usuario-barra-lateral" id="boton-cerrar-sesion" title="Cerrar sesión">
+        <div class="circulo-avatar">
+          <img src="../img/avatar-supervisor.png" alt="Angelo" class="imagen-avatar">
+        </div>
+        <div class="datos-usuario">
+          <strong>Angelo</strong>
+          <span>Ing supervisor</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="area-principal" id="objetivo-desenfoque">
+      <header class="barra-superior">
+        <div class="izquierda-barra-superior">
+          <button class="boton-menu-movil" id="boton-menu-movil" aria-label="Abrir menú">☰</button>
+          <div class="titulos-barra-superior">
+            <span>Reportes / Detalles</span>
+            <h2>Inspeccion #104</h2>
+          </div>
+        </div>
+
+        <div class="acciones-barra-superior">
+          <button type="button" class="boton-campana" id="boton-campana" aria-label="Notificaciones">
+            <img src="../img/icono-campana.png" alt="Notificaciones" class="icono-campana">
+          </button>
+          <button type="button" class="boton-primario" id="boton-nueva-inspeccion">+ Nueva inspeccion</button>
+        </div>
+      </header>
+
+      <main class="contenedor-reporte">
+        <span class="etiqueta-seccion">Informe de inspeccion</span>
+        <h3 class="encabezado-reporte">Imagen de la inspeccion #104</h3>
+        <p class="subencabezado-reporte">Edificio - Los Olivos - Departamento Familiar</p>
+
+        <div class="cuadricula-detalles-reporte">
+          <!-- fotografia de la fisura -->
+          <div class="caja-foto-fisura">
+            <img src="../img/foto-fisura-104.png" alt="Evidencia fotográfica de fisura #104" class="foto-fisura">
+          </div>
+
+          <!-- panel de clasificacion-->
+          <div class="panel-info-fisura">
+            <div class="fila-superior-info">
+              <div>
+                <span class="texto-pequeno-gris">Clasificacion de daño</span>
+                <h4 class="titulo-dano">Fisura Critica en una casa</h4>
+              </div>
+              <span class="insignia-critica">Riesgo Critico</span>
+            </div>
+
+            <div class="fila-puntaje">
+              <span class="etiqueta-puntaje">Clasificacion de daño</span>
+              <span class="numero-puntaje">92/100</span>
+            </div>
+
+            <div class="barra-tricolor">
+              <div class="tricolor-verde"></div>
+              <div class="tricolor-naranja"></div>
+              <div class="tricolor-rojo"></div>
+            </div>
+
+            <div class="cuadricula-metadatos">
+              <div class="elemento-metadato">
+                <img src="../img/icono-calendario.png" alt="Fecha" class="icono-metadato">
+                <div>
+                  <span class="etiqueta-metadato">Fecha de inspeccion</span>
+                  <strong class="valor-metadato">10/10/26</strong>
+                </div>
+              </div>
+
+              <div class="elemento-metadato">
+                <img src="../img/icono-reloj.png" alt="Hora" class="icono-metadato">
+                <div>
+                  <span class="etiqueta-metadato">Hora de registro</span>
+                  <strong class="valor-metadato">9:30 pm</strong>
+                </div>
+              </div>
+
+              <div class="elemento-metadato">
+                <img src="../img/icono-ubicacion.png" alt="Ubicacion" class="icono-metadato">
+                <div>
+                  <span class="etiqueta-metadato">Ubicacion</span>
+                  <strong class="valor-metadato">Los olivos</strong>
+                </div>
+              </div>
+
+              <div class="elemento-metadato">
+                <img src="../img/icono-inspector.png" alt="Inspector" class="icono-metadato">
+                <div>
+                  <span class="etiqueta-metadato">Inspector responsable</span>
+                  <strong class="valor-metadato">Ing Jorge</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- descargar inforrme-->
+        <div class="fila-descarga">
+          <button type="button" class="boton-descargar-pdf" id="boton-abrir-modal">
+            <img src="../img/icono-descargar-pdf.png" alt="Descargar PDF" class="icono-descarga">
+            <div class="texto-descarga">
+              <strong>Descargar informe técnico en PDF</strong>
+              <span>Documento completo con evidencia y diagnostico</span>
+            </div>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- vista previa del informe  -->
+    <div id="modal-vista-previa" class="fondo-modal oculto">
+      <div class="ventana-modal">
+        <div class="cabecera-modal">
+          <span class="etiqueta-seccion">Informe tecnico</span>
+          <h3>Vista Previa del Informe</h3>
+        </div>
+
+        <div class="lienzo-modal">
+          <div class="hoja-pdf">
+            <div class="cabecera-pdf">
+              <div class="logo-marca">Fisura<span>Guard</span></div>
+              <div class="identificador-pdf">
+                <span>Informe de inspeccion</span>
+                <strong>#104</strong>
+              </div>
+            </div>
+
+            <hr class="divisor-pdf">
+
+            <span class="etiqueta-diagnostico-pdf">Diagnostico Estructural</span>
+            <h4 class="titulo-pdf">Fisura Critica en un departamento</h4>
+            <p class="subtitulo-pdf">Edificio - Los Olivos - Casa Familiar</p>
+
+            <div class="cajas-pdf">
+              <div class="caja-pdf">
+                <span>Nivel de hallazgo</span>
+                <strong class="texto-rojo">CRITICO</strong>
+              </div>
+              <div class="caja-pdf">
+                <span>Indice</span>
+                <strong class="texto-rojo">92/100</strong>
+              </div>
+              <div class="caja-pdf">
+                <span>Fecha del reporte</span>
+                <strong>10/10/26</strong>
+              </div>
+            </div>
+
+            <div class="resumen-pdf">
+              <span class="titulo-resumen">Resumen del reporte</span>
+              <p>
+                Se identifica una fisura diagonal con apertura máxima de 2.8 mm y propagación activa. 
+                El patrón observado sugiere esfuerzo cortante en el elemento estructural.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pie-modal">
+          <button type="button" class="boton-primario boton-modal" id="boton-confirmar-pdf">Confirmar</button>
+          <button type="button" class="boton-primario boton-modal" id="boton-cancelar-pdf">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    <!-- Enlace hacia la lógica JS -->
+  <script src="../js/main3.js"></script>
+</body>
+</html>

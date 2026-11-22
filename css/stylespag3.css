@@ -1,0 +1,472 @@
+.contenedor-reporte {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 48px;
+}
+
+.encabezado-reporte {
+  font-size: 1.6rem;
+  color: var(--azul-marino);
+  font-weight: 800;
+}
+
+.subencabezado-reporte {
+  font-size: 0.92rem;
+  color: var(--azul-marino);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.cuadricula-detalles-reporte {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 36px;
+  align-items: center;
+  width: 100%;
+}
+
+.caja-foto-fisura {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #CCC;
+  width: 100%;
+}
+
+.foto-fisura {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.fila-superior-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+
+.texto-pequeno-gris {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.titulo-dano {
+  font-size: 1.4rem;
+  color: var(--azul-marino);
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.insignia-critica {
+  color: var(--rojo);
+  font-size: 1.1rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.fila-puntaje {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.etiqueta-puntaje {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.numero-puntaje {
+  color: var(--rojo);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.barra-tricolor {
+  display: flex;
+  height: 10px;
+  margin-bottom: 26px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.tricolor-verde   { 
+    flex: 1; background: #19B500; 
+}
+
+.tricolor-naranja { 
+    flex: 1; background: #FF6B00; 
+}
+
+.tricolor-rojo    { 
+    flex: 1; background: var(--rojo); 
+}
+
+.cuadricula-metadatos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+.elemento-metadato {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icono-metadato {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.etiqueta-metadato {
+  display: block;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.valor-metadato {
+  font-size: 1rem;
+  color: var(--azul-marino);
+  font-weight: 700;
+}
+
+/* botón naranja inferior de descarga  */
+.fila-descarga {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.boton-descargar-pdf {
+  background-color: #FF6600;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.icono-descarga {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.texto-descarga strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.texto-descarga span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* css de del mockup 4  */
+.fondo-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 25, 40, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 300;
+}
+
+.ventana-modal {
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 780px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  border: 1px solid #CCC;
+}
+
+.cabecera-modal {
+  padding: 16px 26px;
+  border-bottom: 1px solid #999;
+}
+
+.cabecera-modal h3 {
+  font-size: 1.35rem;
+  color: var(--azul-marino);
+  font-weight: 800;
+}
+
+.lienzo-modal {
+  background-color: #D9D9D9;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.hoja-pdf {
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 470px;
+  padding: 28px 34px 36px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cabecera-pdf {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.identificador-pdf {
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--azul-marino);
+}
+
+.identificador-pdf strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 3px;
+}
+
+.divisor-pdf {
+  border: none;
+  border-top: 1.5px solid #222;
+  margin-bottom: 22px;
+}
+
+.etiqueta-diagnostico-pdf {
+  color: var(--rojo);
+  font-size: 0.74rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.titulo-pdf {
+  font-size: 1.15rem;
+  color: var(--azul-marino);
+  font-weight: 800;
+}
+
+.subtitulo-pdf {
+  font-size: 0.74rem;
+  color: var(--azul-marino);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.cajas-pdf {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.caja-pdf {
+  background-color: #E2E2E2;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.caja-pdf span {
+  display: block;
+  font-size: 0.68rem;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.caja-pdf strong {
+  font-size: 0.85rem;
+  color: var(--azul-marino);
+}
+
+.texto-rojo {
+  color: var(--rojo) !important;
+}
+
+.titulo-resumen {
+  color: #3B82F6;
+  font-size: 0.74rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.resumen-pdf p {
+  font-size: 0.76rem;
+  color: #222;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.pie-modal {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  background-color: #FFFFFF;
+}
+
+.boton-modal {
+  min-width: 155px;
+}
+
+/* Desktop (responsive)*/
+@media (min-width: 1400px) {
+  .contenedor-reporte {
+    padding: 48px 64px;
+  }
+
+  .encabezado-reporte {
+    font-size: 2rem;
+  }
+
+  .subencabezado-reporte {
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+  }
+
+  .cuadricula-detalles-reporte {
+    gap: 54px;
+  }
+
+  .foto-fisura {
+    height: 380px;
+  }
+
+  .titulo-dano {
+    font-size: 1.8rem;
+  }
+
+  .insignia-critica,
+  .numero-puntaje {
+    font-size: 1.4rem;
+  }
+
+  .barra-tricolor {
+    height: 13px;
+    margin-bottom: 34px;
+  }
+
+  .cuadricula-metadatos {
+    gap: 28px 34px;
+  }
+
+  .icono-metadato {
+    width: 44px;
+    height: 44px;
+  }
+
+  .etiqueta-metadato {
+    font-size: 0.92rem;
+  }
+
+  .valor-metadato {
+    font-size: 1.18rem;
+  }
+
+  .fila-descarga {
+    margin-top: 48px;
+  }
+
+  .boton-descargar-pdf {
+    padding: 18px 42px;
+  }
+
+  .texto-descarga strong {
+    font-size: 1.2rem;
+  }
+
+  .texto-descarga span {
+    font-size: 0.95rem;
+  }
+}
+
+/* tablet y celular (responsive) */
+@media (max-width: 960px) {
+  .contenedor-reporte {
+    padding: 26px 28px;
+    justify-content: flex-start;
+  }
+
+  .cuadricula-detalles-reporte {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .foto-fisura {
+    height: auto;
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contenedor-reporte {
+    padding: 20px 16px;
+  }
+
+  .encabezado-reporte {
+    font-size: 1.25rem;
+  }
+
+  .fila-superior-info {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .titulo-dano {
+    font-size: 1.15rem;
+  }
+
+  .cuadricula-metadatos {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .boton-descargar-pdf {
+    width: 100%;
+    padding: 12px 16px;
+  }
+
+  .fondo-modal {
+    padding: 12px;
+  }
+
+  .ventana-modal {
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .hoja-pdf {
+    padding: 20px 16px;
+  }
+
+  .cajas-pdf {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .pie-modal {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .boton-modal {
+    min-width: 0;
+    flex: 1;
+  }
+}
