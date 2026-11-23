@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //click en una alerta critica para ir de frente a la  a ver que es
   if (alertaCritica) {
     alertaCritica.addEventListener('click', () => {
-      window.location.href = 'index3.html';
+      window.location.href = 'inspeccion.html';
     });
   }
 
@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (botonCampana) {
     botonCampana.addEventListener('click', () => {
       alert('Tienes 1 hallazgo crítico pendiente de revisión: Inspección #104 (Torre Norte).');
-      window.location.href = 'index3.html';
+      window.location.href = 'inspeccion.html';
     });
   }
 
   // click boton de nueva inspeccion 
   if (botonNuevaInspeccion) {
     botonNuevaInspeccion.addEventListener('click', () => {
-      window.location.href = 'index3.html';
+      window.location.href = 'inspeccion.html';
     });
   }
 
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (botonCerrarSesion) {
     botonCerrarSesion.addEventListener('click', () => {
       localStorage.removeItem('usuarioActivo');
-      window.location.href = 'index.html';
+      window.location.href = 'inicionSesion.html';
     });
   }
 });

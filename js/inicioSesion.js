@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
 
         // Redirección a la Página 2 
-        window.location.href = '../pages/index2.html';
+        window.location.href = '../pages/dashboard.html';
     });
  
     // Registro de usuarios

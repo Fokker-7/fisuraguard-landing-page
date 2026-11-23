@@ -66,6 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // cerrar sesion
   botonCerrarSesion.addEventListener('click', () => {
     localStorage.removeItem('usuarioActivo');
-    window.location.href = 'index.html';
+    window.location.href = 'inicionSesion.html';
   });
 });
