@@ -281,8 +281,8 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
 }
 
 /*adaptacion resposive */
@@ -329,8 +329,8 @@ body {
 
 .icono-navegacion,
 .icono-campana {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
