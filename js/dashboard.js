@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (botonCerrarSesion) {
     botonCerrarSesion.addEventListener('click', () => {
       localStorage.removeItem('usuarioActivo');
-      window.location.href = 'inicionSesion.html';
+      window.location.href = 'inicioSesion.html';
     });
   }
 });
